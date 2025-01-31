@@ -22,6 +22,7 @@
             color: #222;
             text-align: center;
             padding: 20px;
+            overflow-x: hidden;
         }
 
         .container {
@@ -46,6 +47,9 @@
 
         section {
             margin: 50px 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-in-out;
         }
 
         /* Navigation */
@@ -74,69 +78,28 @@
             font-weight: 600;
             padding: 10px;
             transition: 0.3s;
+            border-radius: 8px;
         }
 
         nav ul li a:hover {
+            background: rgba(0, 123, 255, 0.2);
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
             color: #007bff;
         }
 
-        /* Icons */
-        .social-icons {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-icons a {
-            text-decoration: none;
-            color: inherit;
-            font-size: 1.8rem;
+        /* Glowing Effect */
+        section:hover {
+            border: 2px solid rgba(0, 123, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
             transition: 0.3s;
         }
 
-        .social-icons a:hover {
-            color: #007bff;
-        }
-
-        /* Education */
-        .timeline div {
-            background: rgba(255, 255, 255, 0.5);
-            padding: 20px;
-            margin: 10px 0;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Skills */
-        .skills div {
-            margin: 10px 0;
-        }
-
-        .progress-bar {
-            width: 100%;
-            background: #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
+        /* Skills Bar Animation */
         .progress-bar div {
             height: 10px;
             background: #007bff;
             width: 0;
-            transition: width 1s;
-        }
-
-        /* Contact */
-        .toggle-button {
-            margin-top: 20px;
-            border: none;
-            background: none;
-            cursor: pointer;
-        }
-
-        .toggle-button img {
-            width: 40px;
+            transition: width 1s ease-in-out;
         }
 
         /* Dark Mode */
@@ -151,6 +114,31 @@
 
         .dark-mode nav {
             background: rgba(50, 50, 50, 0.5);
+        }
+
+        /* Floating Dots Background (Tech-Theme) */
+        .floating-dots {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(0, 123, 255, 0.5);
+            border-radius: 50%;
+            animation: float 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50px); }
         }
 
         /* Footer */
@@ -205,29 +193,48 @@
         <section id="contact">
             <h2>Contact</h2>
             <p>Email: cb.sc.u4cse24033@cb.students.amrita.edu</p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/nimal-danyath" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30"></a>
-                <a href="https://github.com/nimaldanyath" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30"></a>
-            </div>
         </section>
-
-        <button class="toggle-button" onclick="toggleDarkMode()">
-            <img src="https://cdn-icons-png.flaticon.com/512/116/116799.png" id="modeIcon">
-        </button>
     </div>
 
     <footer>
         <p>© 2025 Nimal Danyath K. All rights reserved.</p>
     </footer>
 
+    <!-- Floating Dots -->
+    <div class="floating-dots"></div>
+
     <script>
+        // Dark Mode Toggle
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
-            let icon = document.getElementById("modeIcon");
-            icon.src = document.body.classList.contains("dark-mode") 
-                ? "https://cdn-icons-png.flaticon.com/512/6714/6714977.png" 
-                : "https://cdn-icons-png.flaticon.com/512/116/116799.png";
         }
+
+        // Floating Dots Animation
+        function createDots() {
+            const container = document.querySelector(".floating-dots");
+            for (let i = 0; i < 20; i++) {
+                let dot = document.createElement("div");
+                dot.classList.add("dot");
+                dot.style.left = `${Math.random() * 100}vw`;
+                dot.style.top = `${Math.random() * 100}vh`;
+                dot.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                container.appendChild(dot);
+            }
+        }
+
+        createDots();
+
+        // Scroll Animation for Sections
+        const sections = document.querySelectorAll("section");
+        window.addEventListener("scroll", function () {
+            sections.forEach(section => {
+                let top = section.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    section.style.opacity = "1";
+                    section.style.transform = "translateY(0)";
+                }
+            });
+        });
     </script>
 </body>
 </html>
