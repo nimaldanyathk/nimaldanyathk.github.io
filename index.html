@@ -62,6 +62,9 @@
             backdrop-filter: blur(10px);
             padding: 10px 0;
             z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         nav ul {
@@ -87,21 +90,7 @@
             color: #007bff;
         }
 
-        /* Glowing Effect */
-        section:hover {
-            border: 2px solid rgba(0, 123, 255, 0.5);
-            box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
-            transition: 0.3s;
-        }
-
-        /* Skills Bar Animation */
-        .progress-bar div {
-            height: 10px;
-            background: #007bff;
-            width: 0;
-            transition: width 1s ease-in-out;
-        }
-
+        /* Dark Mode Styles */
         .dark-mode {
             background: linear-gradient(135deg, #1a1a1a, #333);
             color: #ddd;
@@ -115,8 +104,25 @@
             background: rgba(50, 50, 50, 0.5);
         }
 
-        
-         /* Social Icons */
+        /* Dark Mode Button */
+        .dark-mode-toggle {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            cursor: pointer;
+        }
+
+        .dark-mode-toggle img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .dark-mode-toggle img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Social Icons */
         .social-icons img {
             width: 40px;
             margin: 10px;
@@ -127,8 +133,7 @@
             transform: scale(1.2);
         }
 
-
-        /* Floating Dots Background (Tech-Theme) */
+        /* Floating Dots Background */
         .floating-dots {
             position: absolute;
             top: 0;
@@ -170,6 +175,9 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="dark-mode-toggle">
+            <img id="modeIcon" src="https://cdn-icons-png.flaticon.com/512/6714/6714977.png" alt="Dark Mode" onclick="toggleDarkMode()">
+        </div>
     </nav>
 
     <div class="container">
@@ -178,9 +186,7 @@
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Hello! I’m Nimal Danyath K, a B.Tech Computer Science and Engineering student at Amrita Vishwa Vidyapeetham, Coimbatore. Passionate about programming, Artificial Intelligence, and innovative design, I thrive on solving real-world challenges through technology.
-
-I am dedicated to continuous learning, leveraging teamwork, and applying cutting-edge technologies to create meaningful solutions. My interests include exploring the latest advancements in tech, contributing to impactful projects, and building a strong foundation for a future in the tech industry.</p>
+            <p>Hello! I’m Nimal Danyath K, a B.Tech Computer Science and Engineering student at Amrita Vishwa Vidyapeetham, Coimbatore...</p>
         </section>
 
         <section id="education">
@@ -214,7 +220,7 @@ I am dedicated to continuous learning, leveraging teamwork, and applying cutting
                 <a href="https://github.com/nimaldanyathk" target="_blank">
                     <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="GitHub">
                 </a>
-            </div>
+            </div> 
         </section>
     </div>
 
@@ -222,46 +228,14 @@ I am dedicated to continuous learning, leveraging teamwork, and applying cutting
         <p>© 2025 Nimal Danyath K. All rights reserved.</p>
     </footer>
 
-    <!-- Floating Dots -->
-    <div class="floating-dots"></div>
-
     <script>
-        // Dark Mode Toggle
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
             let icon = document.getElementById("modeIcon");
             icon.src = document.body.classList.contains("dark-mode") 
-                ? "https://cdn-icons-png.flaticon.com/512/6714/6714977.png" 
-                : "https://cdn-icons-png.flaticon.com/512/116/116799.png";
+                ? "https://cdn-icons-png.flaticon.com/512/116/116799.png" 
+                : "https://cdn-icons-png.flaticon.com/512/6714/6714977.png";
         }
-        
-
-        // Floating Dots Animation
-        function createDots() {
-            const container = document.querySelector(".floating-dots");
-            for (let i = 0; i < 20; i++) {
-                let dot = document.createElement("div");
-                dot.classList.add("dot");
-                dot.style.left = `${Math.random() * 100}vw`;
-                dot.style.top = `${Math.random() * 100}vh`;
-                dot.style.animationDuration = `${Math.random() * 5 + 5}s`;
-                container.appendChild(dot);
-            }
-        }
-
-        createDots();
-
-        // Scroll Animation for Sections
-        const sections = document.querySelectorAll("section");
-        window.addEventListener("scroll", function () {
-            sections.forEach(section => {
-                let top = section.getBoundingClientRect().top;
-                if (top < window.innerHeight - 100) {
-                    section.style.opacity = "1";
-                    section.style.transform = "translateY(0)";
-                }
-            });
-        });
     </script>
 </body>
 </html>
