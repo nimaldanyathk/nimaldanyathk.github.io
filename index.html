@@ -2,60 +2,145 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nimal Danyath | Portfolio</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nimal Danyath K - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Add your custom animations and styles here */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 36px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        header nav ul li a:hover {
+            color: #ffa500;
+        }
+
+        section {
+            padding: 50px;
+            margin: 30px;
+        }
+
+        .skills, .projects, .education, .awards {
+            margin-top: 30px;
+        }
+
+        .skills ul, .projects ul, .education ul, .awards ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills li, .projects li, .education li, .awards li {
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        footer a {
+            color: #ffa500;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="wrapper">
-        <header>
-            <h1><a href="{{ '/' | absolute_url }}">Nimal Danyath</a></h1>
-            <img src="assets/images/profile.jpg" alt="Nimal Danyath" width="150">
-            <p>B.Tech CSE | Tech Enthusiast | AI & Web Developer</p>
-            <p>Exploring AI, Web Dev, and Game Development 🚀</p>
+<header>
+    <h1>Nimal Danyath K - Portfolio</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-            <ul class="social-links">
-                <li><a href="https://github.com/NimalDanyath" target="_blank">GitHub</a></li>
-                <li><a href="https://linkedin.com/in/NimalDanyath" target="_blank">LinkedIn</a></li>
-                <li><a href="https://twitter.com/NimalDanyath" target="_blank">Twitter</a></li>
-            </ul>
-        </header>
+<section id="about">
+    <h2>About Me</h2>
+    <p>Hi, I’m Nimal Danyath K, a passionate Computer Science and Engineering student at Amrita Vishwa Vidyapeetham, Coimbatore. I specialize in software development, AI, and machine learning.</p>
+</section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am a Computer Science student at Amrita University, passionate about AI, web development, and game design. Currently working on <strong>'The Inspirational Bot'</strong> and building an open-world car game.</p>
-        </section>
+<section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>C++, Java, Python, JavaScript, HTML, CSS</li>
+        <li>SQL, LaTeX, Matlab, Arduino IDE</li>
+    </ul>
+</section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li><strong><a href="https://github.com/NimalDanyath/TheInspirationalBot" target="_blank">The Inspirational Bot</a></strong> - AI-powered quote generator with dynamic UI.</li>
-                <li><strong><a href="https://github.com/NimalDanyath/CarGame" target="_blank">Open-World Car Game</a></strong> - A physics-based car simulation with real-world mechanics.</li>
-                <li><strong>Solar-Powered Kid’s ATM</strong> - A smart toy ATM for children.</li>
-            </ul>
-        </section>
+<section id="projects" class="projects">
+    <h2>Projects</h2>
+    <ul>
+        <li><strong>Ovarian Cancer Detection using AI</strong> (2025)</li>
+        <li><strong>Smart Task Manager with Graphs</strong> (2024)</li>
+        <li><strong>AI in Disaster Management and Predictive Analysis</strong> (2024)</li>
+    </ul>
+</section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>💻 Programming: Python, Java, JavaScript</li>
-                <li>🌍 Web Dev: HTML, CSS, React.js</li>
-                <li>🤖 AI & ML: TensorFlow, OpenCV</li>
-                <li>🎮 Game Dev: Unity, Unreal Engine</li>
-            </ul>
-        </section>
+<section id="education" class="education">
+    <h2>Education</h2>
+    <ul>
+        <li><strong>Amrita Vishwa Vidyapeetham, Coimbatore</strong> - B.Tech in Computer Science and Engineering (2024 - Present)</li>
+        <li><strong>Excel Public School, Mahe</strong> - Class 12 (State Topper) (2024)</li>
+        <li><strong>Sree Gokulam Public School, Vatakara</strong> - Class 10 (98.8%) (2022)</li>
+    </ul>
+</section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:nimaldanyath@gmail.com">nimaldanyath@gmail.com</a></p>
-            <p>GitHub: <a href="https://github.com/NimalDanyath" target="_blank">github.com/NimalDanyath</a></p>
-        </section>
+<section id="awards" class="awards">
+    <h2>Awards & Certificates</h2>
+    <ul>
+        <li>Board Topper Award (Govt of Kerala)</li>
+        <li>School Topper Award Class 10 (Sree Gokulam Public School)</li>
+        <li>Quantum Computing and Information workshop by IBM</li>
+        <li>Introduction to C++ - Sololearn Certificate</li>
+        <li>Introduction to HTML - Sololearn Certificate</li>
+    </ul>
+</section>
 
-        <footer>
-            <p>&copy; 2025 Nimal Danyath | Built with GitHub Pages</p>
-        </footer>
-    </div>
+<footer>
+    <p>Find me on <a href="https://github.com/nimaldanyathk">GitHub</a> | <a href="https://linkedin.com/in/nimaldanyathk">LinkedIn</a></p>
+    <p>Email: <a href="mailto:cb.sc.u4cse24033@cb.students.amrita.edu">cb.sc.u4cse24033@cb.students.amrita.edu</a></p>
+</footer>
 
 </body>
 </html>
