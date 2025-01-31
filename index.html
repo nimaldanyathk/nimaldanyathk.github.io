@@ -1,150 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nimal Danyath K - Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        /* Add your custom animations and styles here */
+        /* General Styles */
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
         }
+
         header {
-            background: #333;
-            color: #fff;
+            background-color: #1e1e1e;
             padding: 20px;
+            color: #fff;
             text-align: center;
         }
+
         header h1 {
-            font-size: 36px;
-            animation: fadeIn 2s ease-in-out;
-        }
-        header nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        header nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        header nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-        header nav ul li a:hover {
-            color: #ffa500;
+            margin: 0;
+            font-size: 2.5rem;
         }
 
-        section {
-            padding: 50px;
-            margin: 30px;
+        header p {
+            font-size: 1.2rem;
         }
 
-        .skills, .projects, .education, .awards {
-            margin-top: 30px;
-        }
-
-        .skills ul, .projects ul, .education ul, .awards ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .skills li, .projects li, .education li, .awards li {
-            margin: 10px 0;
-        }
-
-        footer {
+        .contact-info {
             text-align: center;
             padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .contact-info h2 {
+            margin: 0;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .skills,
+        .education,
+        .projects {
+            margin: 40px;
+        }
+
+        .skills h3,
+        .education h3,
+        .projects h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .skills ul,
+        .education ul,
+        .projects ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills li,
+        .education li,
+        .projects li {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: #ddd;
+        }
+
+        .dark-mode header {
             background-color: #333;
-            color: #fff;
         }
 
-        footer a {
-            color: #ffa500;
+        .dark-mode .contact-info {
+            background-color: #2c2c2c;
         }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        .dark-mode .skills li,
+        .dark-mode .education li,
+        .dark-mode .projects li {
+            color: #bbb;
+        }
+
+        .toggle-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #1e1e1e;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 25px;
         }
     </style>
-    <!-- Link the JavaScript file (theme-toggle.js) -->
-<script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
 </head>
+
 <body>
-    <!-- Add this where you want the theme toggle button -->
-<button id="theme-toggle">🌙</button>
+    <header>
+        <h1>Nimal Danyath K</h1>
+        <p>Computer Science & Engineering | B.Tech, Amrita University</p>
+    </header>
 
-<header>
-    <h1>Nimal Danyath K - Portfolio</h1>
-    <nav>
+    <div class="contact-info">
+        <h2>Contact Information</h2>
+        <p>Email: cb.sc.u4cse24033@cb.students.amrita.edu</p>
+        <p>Phone: +91-6282374586</p>
+        <p>GitHub: <a href="https://github.com/nimaldanyathk" target="_blank">github.com/nimaldanyathk</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/nimaldanyathk" target="_blank">linkedin.com/in/nimaldanyathk</a></p>
+    </div>
+
+    <section class="skills">
+        <h3>Skills</h3>
         <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>C++, Java, Python, JavaScript, HTML, CSS, SQL, LaTeX</li>
+            <li>Matlab, Arduino IDE</li>
         </ul>
-    </nav>
-</header>
+    </section>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>Hi, I’m Nimal Danyath K, a passionate Computer Science and Engineering student at Amrita Vishwa Vidyapeetham, Coimbatore. I specialize in software development, AI, and machine learning.</p>
-</section>
+    <section class="education">
+        <h3>Education</h3>
+        <ul>
+            <li>B.Tech in Computer Science and Engineering, Amrita Vishwa Vidyapeetham (2024 - Present), CGPA: 9.14</li>
+            <li>Class 12, Excel Public School, Mahe (2024), 100% (State Topper)</li>
+            <li>Class 10, Sree Gokulam Public School, Vatakara (2022), 98.8%</li>
+        </ul>
+    </section>
 
-<section id="skills" class="skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>C++, Java, Python, JavaScript, HTML, CSS</li>
-        <li>SQL, LaTeX, Matlab, Arduino IDE</li>
-    </ul>
-</section>
+    <section class="projects">
+        <h3>Projects</h3>
+        <ul>
+            <li>Ongoing Research on Ovarian Cancer Detection using AI and Fuzzy Logic Systems (2025)</li>
+            <li>Smart Task Manager with Graphs (2024)</li>
+            <li>AI in Leveraging Disaster Management and Predictive Analysis (2024)</li>
+        </ul>
+    </section>
 
-<section id="projects" class="projects">
-    <h2>Projects</h2>
-    <ul>
-        <li><strong>Ovarian Cancer Detection using AI</strong> (2025)</li>
-        <li><strong>Smart Task Manager with Graphs</strong> (2024)</li>
-        <li><strong>AI in Disaster Management and Predictive Analysis</strong> (2024)</li>
-    </ul>
-</section>
+    <footer>
+        <p>&copy; 2025 Nimal Danyath K. All rights reserved.</p>
+    </footer>
 
-<section id="education" class="education">
-    <h2>Education</h2>
-    <ul>
-        <li><strong>Amrita Vishwa Vidyapeetham, Coimbatore</strong> - B.Tech in Computer Science and Engineering (2024 - Present)</li>
-        <li><strong>Excel Public School, Mahe</strong> - Class 12 (State Topper) (2024)</li>
-        <li><strong>Sree Gokulam Public School, Vatakara</strong> - Class 10 (98.8%) (2022)</li>
-    </ul>
-</section>
+    <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
-<section id="awards" class="awards">
-    <h2>Awards & Certificates</h2>
-    <ul>
-        <li>Board Topper Award (Govt of Kerala)</li>
-        <li>School Topper Award Class 10 (Sree Gokulam Public School)</li>
-        <li>Quantum Computing and Information workshop by IBM</li>
-        <li>Introduction to C++ - Sololearn Certificate</li>
-        <li>Introduction to HTML - Sololearn Certificate</li>
-    </ul>
-</section>
-
-<footer>
-    <p>Find me on <a href="https://github.com/nimaldanyathk">GitHub</a> | <a href="https://linkedin.com/in/nimaldanyathk">LinkedIn</a></p>
-    <p>Email: <a href="mailto:cb.sc.u4cse24033@cb.students.amrita.edu">cb.sc.u4cse24033@cb.students.amrita.edu</a></p>
-</footer>
-
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 </body>
+
 </html>
