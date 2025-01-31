@@ -1,33 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header>
-      <h1>Welcome to My Portfolio</h1>
-      <nav>
-        <ul>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Hi, I'm Nimal Danyath! I specialize in web development and AI.</p>
-    </section>
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>Check out some of my work!</p>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Feel free to reach out!</p>
-    </section>
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nimal Danyath | Portfolio</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <h1><a href="{{ '/' | absolute_url }}">Nimal Danyath</a></h1>
+            <img src="assets/images/profile.jpg" alt="Nimal Danyath" width="150">
+            <p>B.Tech CSE | Tech Enthusiast | AI & Web Developer</p>
+            <p>Exploring AI, Web Dev, and Game Development 🚀</p>
+
+            <ul class="social-links">
+                <li><a href="https://github.com/NimalDanyath" target="_blank">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/NimalDanyath" target="_blank">LinkedIn</a></li>
+                <li><a href="https://twitter.com/NimalDanyath" target="_blank">Twitter</a></li>
+            </ul>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a Computer Science student at Amrita University, passionate about AI, web development, and game design. Currently working on <strong>'The Inspirational Bot'</strong> and building an open-world car game.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong><a href="https://github.com/NimalDanyath/TheInspirationalBot" target="_blank">The Inspirational Bot</a></strong> - AI-powered quote generator with dynamic UI.</li>
+                <li><strong><a href="https://github.com/NimalDanyath/CarGame" target="_blank">Open-World Car Game</a></strong> - A physics-based car simulation with real-world mechanics.</li>
+                <li><strong>Solar-Powered Kid’s ATM</strong> - A smart toy ATM for children.</li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>💻 Programming: Python, Java, JavaScript</li>
+                <li>🌍 Web Dev: HTML, CSS, React.js</li>
+                <li>🤖 AI & ML: TensorFlow, OpenCV</li>
+                <li>🎮 Game Dev: Unity, Unreal Engine</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:nimaldanyath@gmail.com">nimaldanyath@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/NimalDanyath" target="_blank">github.com/NimalDanyath</a></p>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Nimal Danyath | Built with GitHub Pages</p>
+        </footer>
+    </div>
+
+</body>
 </html>
