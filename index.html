@@ -47,12 +47,10 @@
 
         section {
             margin: 50px 0;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-in-out;
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -90,7 +88,6 @@
             color: #007bff;
         }
 
-        /* Dark Mode Styles */
         .dark-mode {
             background: linear-gradient(135deg, #1a1a1a, #333);
             color: #ddd;
@@ -104,7 +101,6 @@
             background: rgba(50, 50, 50, 0.5);
         }
 
-        /* Dark Mode Button */
         .dark-mode-toggle {
             position: absolute;
             right: 20px;
@@ -122,7 +118,6 @@
             transform: scale(1.1);
         }
 
-        /* Social Icons */
         .social-icons img {
             width: 40px;
             margin: 10px;
@@ -133,32 +128,6 @@
             transform: scale(1.2);
         }
 
-        /* Floating Dots Background */
-        .floating-dots {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .dot {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: rgba(0, 123, 255, 0.5);
-            border-radius: 50%;
-            animation: float 10s infinite alternate ease-in-out;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-50px); }
-        }
-
-        /* Footer */
         footer {
             margin-top: 40px;
             font-size: 0.9rem;
