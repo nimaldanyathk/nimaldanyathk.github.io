@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nimal Danyath K - Portfolio</title>
-
+    
     <style>
         /* Google Font */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
@@ -80,12 +80,26 @@
             color: #007bff;
         }
 
-        /* Education Timeline */
-        .timeline {
-            text-align: left;
-            padding: 20px;
+        /* Icons */
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
 
+        .social-icons a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 1.8rem;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+
+        /* Education */
         .timeline div {
             background: rgba(255, 255, 255, 0.5);
             padding: 20px;
@@ -113,47 +127,16 @@
             transition: width 1s;
         }
 
-        /* Projects */
-        .project {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            width: 250px;
-            padding: 20px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.5);
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-        }
-
         /* Contact */
-        .contact-info a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: 600;
-        }
-
         .toggle-button {
             margin-top: 20px;
-            padding: 12px 25px;
             border: none;
-            font-size: 1rem;
-            border-radius: 30px;
-            background: #333;
-            color: white;
+            background: none;
             cursor: pointer;
         }
 
-        .toggle-button:hover {
-            background: #555;
+        .toggle-button img {
+            width: 40px;
         }
 
         /* Dark Mode */
@@ -170,9 +153,11 @@
             background: rgba(50, 50, 50, 0.5);
         }
 
-        .dark-mode .toggle-button {
-            background: #ddd;
-            color: #222;
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            opacity: 0.7;
         }
     </style>
 </head>
@@ -183,7 +168,6 @@
             <li><a href="#about">About</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -194,24 +178,15 @@
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Tech enthusiast with a passion for AI, Machine Learning, and Embedded Systems. Always eager to learn and innovate!</p>
+            <p>Tech enthusiast with a passion for AI, Machine Learning, and Embedded Systems.</p>
         </section>
 
         <section id="education">
             <h2>Education</h2>
             <div class="timeline">
-                <div>
-                    <h3>Amrita Vishwa Vidyapeetham</h3>
-                    <p>B.Tech in CSE (2024 - Present) | CGPA: 9.14</p>
-                </div>
-                <div>
-                    <h3>Excel Public School, Mahe</h3>
-                    <p>Class 12 (100%) | Kerala State Topper</p>
-                </div>
-                <div>
-                    <h3>Sree Gokulam Public School</h3>
-                    <p>Class 10 (98.8%) | CBSE</p>
-                </div>
+                <div><h3>Amrita Vishwa Vidyapeetham</h3><p>B.Tech in CSE | 2024 - Present</p></div>
+                <div><h3>Excel Public School</h3><p>Class 12 (100%) | Kerala State Topper</p></div>
+                <div><h3>Sree Gokulam Public School</h3><p>Class 10 (98.8%) | CBSE</p></div>
             </div>
         </section>
 
@@ -227,25 +202,31 @@
             </div>
         </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <div class="card"><h3>Ovarian Cancer AI</h3><p>AI-powered early detection system.</p></div>
-                <div class="card"><h3>Smart Task Manager</h3><p>Python-based time management tool.</p></div>
-            </div>
-        </section>
-
         <section id="contact">
             <h2>Contact</h2>
             <p>Email: cb.sc.u4cse24033@cb.students.amrita.edu</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/nimal-danyath" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30"></a>
+                <a href="https://github.com/nimaldanyath" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30"></a>
+            </div>
         </section>
 
-        <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        <button class="toggle-button" onclick="toggleDarkMode()">
+            <img src="https://cdn-icons-png.flaticon.com/512/116/116799.png" id="modeIcon">
+        </button>
     </div>
+
+    <footer>
+        <p>© 2025 Nimal Danyath K. All rights reserved.</p>
+    </footer>
 
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
+            let icon = document.getElementById("modeIcon");
+            icon.src = document.body.classList.contains("dark-mode") 
+                ? "https://cdn-icons-png.flaticon.com/512/6714/6714977.png" 
+                : "https://cdn-icons-png.flaticon.com/512/116/116799.png";
         }
     </script>
 </body>
