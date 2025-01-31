@@ -4,3 +4,33 @@
 @import "{{ site.theme }}";
 
 /* Add your custom styles below */
+/* Global styles for light mode */
+body {
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+/* Dark Mode */
+body[data-theme="dark"] {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Light/Dark Mode Toggle Button */
+button#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+button#theme-toggle:hover {
+  background-color: #444;
+}
