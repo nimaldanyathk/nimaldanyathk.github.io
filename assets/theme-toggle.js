@@ -1,28 +1,23 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleButton = document.createElement('button');
-  toggleButton.id = 'theme-toggle';
-  toggleButton.innerText = '🌙';  // Initial dark mode icon
+// Get the toggle button
+const toggleButton = document.getElementById('mode-toggle');
 
-  // Append the button to the body
-  document.body.appendChild(toggleButton);
+// Check if dark mode is already enabled
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    toggleButton.textContent = '🌞'; // Sun icon for light mode
+} else {
+    document.body.classList.remove('dark-mode');
+    toggleButton.textContent = '🌙'; // Moon icon for dark mode
+}
 
-  // Check for saved user theme preference
-  const currentTheme = localStorage.getItem('theme');
-  if (currentTheme) {
-    document.body.setAttribute('data-theme', currentTheme);
-    toggleButton.innerText = currentTheme === 'dark' ? '☀️' : '🌙';  // Toggle icon
-  }
-
-  // Event listener for toggle
-  toggleButton.addEventListener('click', () => {
-    let newTheme = 'light';
-    if (document.body.getAttribute('data-theme') === 'light') {
-      newTheme = 'dark';
-      toggleButton.innerText = '☀️';  // Light mode icon
+// Toggle dark and light mode
+toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+        toggleButton.textContent = '🌞';
+        localStorage.setItem('dark-mode', 'enabled');
     } else {
-      toggleButton.innerText = '🌙';  // Dark mode icon
+        toggleButton.textContent = '🌙';
+        localStorage.setItem('dark-mode', 'disabled');
     }
-    document.body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);  // Save preference
-  });
 });
