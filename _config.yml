@@ -1,149 +1,23 @@
+title: Nimal Danyath K - Portfolio
+description: Personal Portfolio
+url: "https://yourusername.github.io"  # Replace with your GitHub Pages URL
 theme: jekyll-theme-cayman
-# Site settings
-title: "Nimal Danyath K - Portfolio"
-email: "cb.sc.u4cse24033@cb.students.amrita.edu"
-description: "Personal portfolio of Nimal Danyath K, B.Tech Computer Science and Engineering student at Amrita University, Coimbatore."
-baseurl: "/" # Leave this as "/" if your site is hosted at the root of the domain
-url: "https://username.github.io" # Replace with your GitHub Pages URL
-logo: "/assets/images/logo.png" # Path to your logo, if any
-
-# Social Media Settings
+highlighter: rouge
+twitter_username: "nimaldanyathk"
 github_username: "nimaldanyathk"
-linkedin_username: "nimaldanyathk"
-social_links:
-  - title: "GitHub"
-    icon: "github"
-    url: "https://github.com/nimaldanyathk"
-  - title: "LinkedIn"
-    icon: "linkedin"
-    url: "https://linkedin.com/in/nimaldanyathk"
-  - title: "Email"
-    icon: "envelope"
-    url: "mailto:cb.sc.u4cse24033@cb.students.amrita.edu"
 
-# Author Settings
 author:
   name: "Nimal Danyath K"
-  bio: "A passionate computer science and engineering student, focusing on AI, software development, and technology innovations."
-  location: "Coimbatore, India"
-  avatar: "/assets/images/avatar.png"  # Path to your profile picture
+  email: "cb.sc.u4cse24033@cb.students.amrita.edu"
+  avatar: "assets/images/profile.jpg"  # Update with your profile image path
 
-# Navigation links for the header
-navigation_links:
-  - title: "Home"
-    url: "/"
-  - title: "About Me"
-    url: "/about"
-  - title: "Skills"
-    url: "/skills"
-  - title: "Projects"
-    url: "/projects"
-  - title: "Education"
-    url: "/education"
-  - title: "Awards"
-    url: "/awards"
-  - title: "Contact"
-    url: "/contact"
+social_links:
+  - { name: "GitHub", url: "https://github.com/nimaldanyathk" }
+  - { name: "LinkedIn", url: "https://linkedin.com/in/nimaldanyathk" }
 
-# Skills Section
-skills:
-  - name: "C++"
-  - name: "Java"
-  - name: "Python"
-  - name: "JavaScript"
-  - name: "HTML"
-  - name: "CSS"
-  - name: "SQL"
-  - name: "LaTeX"
-  - name: "Matlab"
-  - name: "Arduino IDE"
-
-# Education Section
-education:
-  - institution: "Amrita Vishwa Vidyapeetham, Coimbatore"
-    degree: "B.Tech in Computer Science and Engineering"
-    year: "2024 - Present"
-    cgpa: "9.14 (Current)"
-  - institution: "Excel Public School, Mahe"
-    degree: "Class 12 (Kerala State Board)"
-    year: "2024"
-    percentage: "100% (State Topper)"
-  - institution: "Sree Gokulam Public School, Vatakara"
-    degree: "Class 10 (CBSE)"
-    year: "2022"
-    percentage: "98.8%"
-
-# Projects Section
-projects:
-  - title: "Ovarian Cancer Detection using AI and Fuzzy Logic"
-    year: "2025"
-    description: "Investigating the integration of AI and fuzzy logic systems for early detection of ovarian cancer, with a focus on pattern recognition and predictive analytics."
-    technologies: "AI, Fuzzy Logic, Python"
-    link: "/projects/ovarian-cancer-detection"
-  - title: "Smart Task Manager with Graphical Visualization"
-    year: "2024"
-    description: "A desktop software for managing tasks with interactive graphs, built using Python and Matlab, focusing on time management and task tracking."
-    technologies: "Python, Matlab"
-    link: "/projects/smart-task-manager"
-  - title: "AI in Disaster Management and Predictive Analysis"
-    year: "2024"
-    description: "Exploring the role of AI in disaster prediction and management. Case study on predicting landslides in Wayanad using machine learning algorithms."
-    technologies: "Machine Learning, Python"
-    link: "/projects/ai-in-disaster-management"
-
-# Awards Section
-awards:
-  - title: "State Topper - 12th Board Exam"
-    description: "Awarded by the Government of Kerala for achieving the highest marks in Class 12 Kerala State Board Examination."
-  - title: "IBM Quantum Computing and Information Workshop"
-    description: "Completed workshop on Quantum Computing, focusing on fundamental concepts and applications."
-  - title: "Introduction to C++ - Sololearn Certificate"
-    description: "Completed the C++ fundamentals course on Sololearn."
-  - title: "Introduction to HTML - Sololearn Certificate"
-    description: "Completed the HTML course on Sololearn."
-  
-# Footer Settings
-footer:
-  copyright: "© 2025 Nimal Danyath K"
-  social_links:
-    - title: "GitHub"
-      url: "https://github.com/nimaldanyathk"
-    - title: "LinkedIn"
-      url: "https://linkedin.com/in/nimaldanyathk"
-    - title: "Email"
-      url: "mailto:cb.sc.u4cse24033@cb.students.amrita.edu"
-
-# Google Analytics (Optional)
-google_analytics: "UA-XXXXXXX-X"  # Replace with your Google Analytics tracking ID
-
-# SEO Settings
-seo:
-  meta_description: "Nimal Danyath K - B.Tech CSE student at Amrita University, Coimbatore. Passionate about AI, software development, and machine learning."
-  meta_keywords: "Nimal Danyath K, Portfolio, B.Tech, Computer Science, AI, Machine Learning, Software Development"
-  meta_author: "Nimal Danyath K"
-
-# SEO Image for social sharing (Optional)
-seo_image: "/assets/images/seo-image.png"  # Path to an image for social media sharing
-
-# Header Image (Optional)
-header_image: "/assets/images/header-image.jpg"  # Image for the top of the page (e.g., a banner)
-
-# Site Theme (Jekyll Theme Cayman)
-theme: "jekyll-theme-cayman"
-
-# Navigation bar customization
-navbar:
-  - text: "Home"
-    link: "/"
-  - text: "About"
-    link: "/about"
-  - text: "Skills"
-    link: "/skills"
-  - text: "Projects"
-    link: "/projects"
-  - text: "Education"
-    link: "/education"
-  - text: "Awards"
-    link: "/awards"
-  - text: "Contact"
-    link: "/contact"
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      author: "Nimal Danyath K"
