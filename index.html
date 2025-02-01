@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nimal Danyath K - Portfolio</title>
-
+    
     <style>
+        /* Google Font */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 
         * {
@@ -21,61 +22,153 @@
             color: #222;
             text-align: center;
             padding: 20px;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            list-style: none;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: inherit;
-            font-weight: bold;
-        }
-
-        .dark-mode {
-            background: linear-gradient(135deg, #121212, #2c2c2c);
-            color: #ffffff;
-        }
-
-        .dark-mode-toggle img {
-            width: 30px;
-            cursor: pointer;
+            overflow-x: hidden;
+            transition: background 0.5s ease-in-out;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
+            padding: 40px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+            transition: background 0.5s;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
         }
 
         section {
-            padding: 40px;
-            margin: 20px 0;
+            margin: 50px 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-in-out;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, background 0.3s ease;
+            padding: 10px 0;
+            z-index: 1000;
         }
 
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #222;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 10px;
+            transition: 0.3s;
+            border-radius: 8px;
+        }
+
+        nav ul li a:hover {
+            background: rgba(0, 123, 255, 0.2);
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+            color: #007bff;
+        }
+
+        /* Floating Dots Background */
+        .floating-dots {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(0, 123, 255, 0.5);
+            border-radius: 50%;
+            animation: float 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50px); }
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            color: #ddd;
+        }
+
+        .dark-mode .container {
+            background: rgba(50, 50, 50, 0.2);
+        }
+
+        .dark-mode nav {
+            background: rgba(50, 50, 50, 0.5);
+        }
+
+        /* Hover Animation */
         section:hover {
-            transform: scale(1.05);
-            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid rgba(0, 123, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+            transition: 0.3s;
         }
 
-        .dark-mode section {
-            background: rgba(0, 0, 0, 0.3);
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            opacity: 0.7;
         }
 
-        .dark-mode section:hover {
-            background: rgba(0, 0, 0, 0.5);
+        /* Icons */
+        .social-icons img {
+            width: 40px;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out;
         }
+
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 123, 255, 0.8);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .dark-mode-toggle:hover {
+            background: rgba(0, 123, 255, 1);
+        }
+
     </style>
 </head>
+
 <body>
     <nav>
         <ul>
@@ -84,40 +177,73 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="dark-mode-toggle">
-            <img id="modeIcon" src="https://cdn-icons-png.flaticon.com/512/6714/6714977.png" alt="Dark Mode" onclick="toggleDarkMode()">
-        </div>
     </nav>
 
     <div class="container">
         <h1>Nimal Danyath K</h1>
-        <p>Aspiring Tech Enthusiast | B.Tech Computer Science & Engineering | Amrita Vishwa Vidyapeetham</p>
+        <p>B.Tech | Computer Science & Engineering | Amrita University</p>
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Passionate about technology and innovation. Enthusiastic learner with a drive to explore new challenges.</p>
+            <p>Tech enthusiast with a passion for AI, Machine Learning, and Embedded Systems.</p>
         </section>
 
         <section id="education">
             <h2>Education</h2>
-            <p>B.Tech in Computer Science & Engineering - Amrita Vishwa Vidyapeetham</p>
+            <p>Amrita University | B.Tech CSE</p>
         </section>
 
         <section id="skills">
             <h2>Skills</h2>
-            <p>Web Development, Programming (Python, JavaScript), Problem Solving, Team Leadership</p>
+            <p>Java, Python, C++, Embedded Systems, AI</p>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>Email: nimal.danyath@example.com | Phone: +91-1234567890</p>
+            <p>Email: cb.sc.u4cse24033@cb.students.amrita.edu</p>
+            
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/yourprofile" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="GitHub">
+                </a>
+            </div>
         </section>
     </div>
 
+    <footer>
+        <p>© 2025 Nimal Danyath K. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating Dots -->
+    <div class="floating-dots"></div>
+
+    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+        🌙
+    </div>
+
     <script>
+        // Dark Mode Toggle
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
         }
+
+        // Floating Dots
+        function createDots() {
+            const container = document.querySelector(".floating-dots");
+            for (let i = 0; i < 20; i++) {
+                let dot = document.createElement("div");
+                dot.classList.add("dot");
+                dot.style.left = `${Math.random() * 100}vw`;
+                dot.style.top = `${Math.random() * 100}vh`;
+                dot.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                container.appendChild(dot);
+            }
+        }
+
+        createDots();
     </script>
 </body>
 </html>
