@@ -23,7 +23,6 @@
             text-align: center;
             padding: 20px;
             overflow-x: hidden;
-            transition: background 0.5s ease-in-out;
         }
 
         .container {
@@ -34,7 +33,6 @@
             background: rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(15px);
-            transition: background 0.5s;
         }
 
         h1 {
@@ -42,16 +40,17 @@
             font-weight: 700;
         }
 
-        section {
-            margin: 50px 0;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-in-out;
-            padding: 20px;
-            border-radius: 10px;
+        p {
+            font-size: 1.2rem;
+            opacity: 0.8;
         }
 
-        /* Navigation */
+        section {
+            margin: 50px 0;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         nav {
             position: fixed;
             top: 0;
@@ -61,6 +60,9 @@
             backdrop-filter: blur(10px);
             padding: 10px 0;
             z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         nav ul {
@@ -85,7 +87,6 @@
             box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
             color: #007bff;
         }
-
         /* Floating Dots Background */
         .floating-dots {
             position: absolute;
@@ -111,7 +112,7 @@
             100% { transform: translateY(-50px); }
         }
 
-        /* Dark Mode */
+
         .dark-mode {
             background: linear-gradient(135deg, #1a1a1a, #333);
             color: #ddd;
@@ -125,21 +126,23 @@
             background: rgba(50, 50, 50, 0.5);
         }
 
-        /* Hover Animation */
-        section:hover {
-            border: 2px solid rgba(0, 123, 255, 0.5);
-            box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
-            transition: 0.3s;
+        .dark-mode-toggle {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            cursor: pointer;
         }
 
-        /* Footer */
-        footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            opacity: 0.7;
+        .dark-mode-toggle img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease-in-out;
         }
 
-        /* Icons */
+        .dark-mode-toggle img:hover {
+            transform: scale(1.1);
+        }
+
         .social-icons img {
             width: 40px;
             margin: 10px;
@@ -150,22 +153,11 @@
             transform: scale(1.2);
         }
 
-        /* Dark Mode Toggle */
-        .dark-mode-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 123, 255, 0.8);
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            opacity: 0.7;
         }
-
-        .dark-mode-toggle:hover {
-            background: rgba(0, 123, 255, 1);
-        }
-
     </style>
 </head>
 
@@ -177,39 +169,52 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="dark-mode-toggle">
+            <img id="modeIcon" src="https://cdn-icons-png.flaticon.com/512/6714/6714977.png" alt="Dark Mode" onclick="toggleDarkMode()">
+        </div>
     </nav>
 
     <div class="container">
         <h1>Nimal Danyath K</h1>
-        <p>B.Tech | Computer Science & Engineering | Amrita University</p>
+        <p>Aspiring Tech Enthusiast | B.Tech Computer Science & Engineering | Amrita Vishwa Vidyapeetham</p>
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Tech enthusiast with a passion for AI, Machine Learning, and Embedded Systems.</p>
+            <p>Hello! I’m Nimal Danyath K, a B.Tech Computer Science and Engineering student at Amrita Vishwa Vidyapeetham, Coimbatore...</p>
         </section>
 
         <section id="education">
             <h2>Education</h2>
-            <p>Amrita University | B.Tech CSE</p>
+            <div class="timeline">
+                <div><h3>Amrita Vishwa Vidyapeetham</h3><p>B.Tech in CSE | 2024 - Present</p></div>
+                <div><h3>Excel Public School</h3><p>Class 12 (100%) | Kerala State Topper</p></div>
+                <div><h3>Sree Gokulam Public School</h3><p>Class 10 (98.8%) | CBSE</p></div>
+            </div>
         </section>
 
         <section id="skills">
             <h2>Skills</h2>
-            <p>Java, Python, C++, Embedded Systems, AI</p>
+            <div class="skills">
+                <p>C++</p>
+                <div class="progress-bar"><div style="width: 90%;"></div></div>
+                <p>Java</p>
+                <div class="progress-bar"><div style="width: 85%;"></div></div>
+                <p>Python</p>
+                <div class="progress-bar"><div style="width: 80%;"></div></div>
+            </div>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
             <p>Email: cb.sc.u4cse24033@cb.students.amrita.edu</p>
-            
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                <a href="https://www.linkedin.com/in/nimalanyathk" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn">
                 </a>
-                <a href="https://github.com/yourprofile" target="_blank">
+                <a href="https://github.com/nimaldanyathk" target="_blank">
                     <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="GitHub">
                 </a>
-            </div>
+            </div> 
         </section>
     </div>
 
@@ -217,20 +222,14 @@
         <p>© 2025 Nimal Danyath K. All rights reserved.</p>
     </footer>
 
-    <!-- Floating Dots -->
-    <div class="floating-dots"></div>
-
-    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
-        🌙
-    </div>
-
     <script>
-        // Dark Mode Toggle
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
+            let icon = document.getElementById("modeIcon");
+            icon.src = document.body.classList.contains("dark-mode") 
+                ? "https://cdn-icons-png.flaticon.com/512/116/116799.png" 
+                : "https://cdn-icons-png.flaticon.com/512/6714/6714977.png";
         }
-
-        // Floating Dots
         function createDots() {
             const container = document.querySelector(".floating-dots");
             for (let i = 0; i < 20; i++) {
