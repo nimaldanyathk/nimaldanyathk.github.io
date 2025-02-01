@@ -1,265 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nimal Danyath K - Portfolio</title>
-    
-    <style>
-        /* Google Font */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: linear-gradient(135deg, #e3e3e3, #ffffff);
-            color: #222;
-            text-align: center;
-            padding: 20px;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(15px);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-
-        section {
-            margin: 50px 0;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-            padding: 10px 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #222;
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 10px;
-            transition: 0.3s;
-            border-radius: 8px;
-        }
-
-        nav ul li a:hover {
-            background: rgba(0, 123, 255, 0.2);
-            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
-            color: #007bff;
-        }
-
-        .dark-mode {
-            background: linear-gradient(135deg, #1a1a1a, #333);
-            color: #ddd;
-        }
-
-        .dark-mode .container {
-            background: rgba(50, 50, 50, 0.2);
-        }
-
-        .dark-mode nav {
-            background: rgba(50, 50, 50, 0.5);
-        }
-
-        .dark-mode-toggle {
-            position: absolute;
-            right: 20px;
-            top: 10px;
-            cursor: pointer;
-        }
-
-        .dark-mode-toggle img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .dark-mode-toggle img:hover {
-            transform: scale(1.1);
-        }
-
-        .social-icons img {
-            width: 40px;
-            margin: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .social-icons img:hover {
-            transform: scale(1.2);
-        }
-
-        /* Floating Dots Background (Tech-Theme) */
-        .floating-dots {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .dot {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: rgba(0, 123, 255, 0.5);
-            border-radius: 50%;
-            animation: float 10s infinite alternate ease-in-out;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-50px); }
-        }
-
-
-        footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimal Danyath K - Portfolio</title>
+    <style>
+/* Google Font */ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap'); * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; } body {background: linear-gradient(135deg, #e3e3e3, #ffffff); color: #222; text-align: center; padding: 20px; overflow-x: hidden; } .container { max-width: 900px; margin: auto; padding: 40px; border-radius: 20px; background: rgba(255, 255, 255, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); backdrop-filter: blur(15px); } h1 { font-size: 2.5rem; font-weight: 700;transition: color 0.3s ease; } h1:hover { color: #007bff; } p { font-size: 1.2rem; opacity: 0.8; transition: opacity 0.3s ease; /* Added transition to p */ } p:hover{ opacity: 1; } section { margin: 50px 0; opacity: 1; transform: translateY(0);transition: transform 0.5s ease, opacity 0.5s ease, background 0.3s ease, box-shadow 0.3s ease; padding: 20px; border-radius: 10px; background: rgba(255, 255, 255, 0.1); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); } section:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.2); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); } nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); padding: 10px 0; z-index: 1000; display: flex; justify-content: center; align-items: center; } nav ul { list-style: none; display: flex; justify-content: center; gap: 20px; } nav ul li a { text-decoration: none; color: #222; font-size: 1rem;font-weight: 600; padding: 10px; transition: 0.3s; border-radius: 8px; } nav ul li a:hover { background: rgba(0, 123, 255, 0.2); box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); color: #007bff; } .dark-mode { background: linear-gradient(135deg, #1a1a1a, #333); color: #ddd; } .dark-mode .container { background: rgba(50, 50, 50, 0.2); } .dark-mode nav {background: rgba(50, 50, 50, 0.5); } .dark-mode section { background: rgba(50, 50, 50, 0.1); } .dark-mode section:hover {background: rgba(50, 50, 50, 0.2); } .dark-mode-toggle { position: absolute; right: 20px; top: 10px; cursor: pointer; }.dark-mode-toggle img { width: 40px; height: 40px; transition: transform 0.3s ease-in-out; } .dark-mode-toggle img:hover{ transform: scale(1.1); } .social-icons img { width: 40px; margin: 10px; transition: transform 0.3s ease-in-out; } .social-icons img:hover { transform: scale(1.2); } .floating-dots { position: absolute; top: 0; left: 0; width: 100%; height: 100vh;pointer-events: none; z-index: -1; } .dot { position: absolute; width: 6px; height: 6px; background: rgba(0, 123, 255, 0.5);border-radius: 50%; animation: float 10s infinite alternate ease-in-out; } @keyframes float { 0% { transform: translateY(0); } 100% { transform: translateY(-50px); } } footer { margin-top: 40px; font-size: 0.9rem; opacity: 0.7;transition: opacity 0.3s ease; } footer:hover{ opacity: 1; } .timeline { display: flex; flex-direction: column; gap: 20px; }.timeline div { padding: 20px; border-radius: 10px; background: rgba(255, 255, 255, 0.1); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; }.timeline div:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.2); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); } .skills { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; } .progress-bar {width: 100%; height: 20px; background-color: #eee; border-radius: 5px; overflow: hidden; } .progress-bar div { height: 100%; background-color: #007bff; border-radius: 5px; transition: width 0.5s ease; } .timeline h3 { margin-bottom: 5px;color: #007bff; transition: color 0.3s ease;    </style>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="dark-mode-toggle">
-            <img id="modeIcon" src="https://cdn-icons-png.flaticon.com/512/6714/6714977.png" alt="Dark Mode" onclick="toggleDarkMode()">
-        </div>
-    </nav>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="dark-mode-toggle">
+            <img id="modeIcon" src="https://cdn-icons-png.flaticon.com/512/6714/6714977.png" alt="Dark Mode" onclick="toggleDarkMode()">
+        </div>
+    </nav>
 
-    <div class="container">
-        <h1>Nimal Danyath K</h1>
-        <p>Aspiring Tech Enthusiast | B.Tech Computer Science & Engineering | Amrita Vishwa Vidyapeetham</p>
+    <div class="container">
+        <h1>Nimal Danyath K</h1>
+        <p>Aspiring Tech Enthusiast | B.Tech Computer Science & Engineering | Amrita Vishwa Vidyapeetham</p>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I’m Nimal Danyath K, a B.Tech Computer Science and Engineering student at Amrita Vishwa Vidyapeetham, Coimbatore. Passionate about programming, Artificial Intelligence, and innovative design, I thrive on solving real-world challenges through technology.
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I’m Nimal Danyath K, a B.Tech Computer Science and Engineering student at Amrita Vishwa Vidyapeetham, Coimbatore. Passionate about programming, Artificial Intelligence, and innovative design, I thrive on solving real-world challenges through technology. I am dedicated to continuous learning, leveraging teamwork, and applying cutting-edge technologies to create meaningful solutions. My interests include exploring the latest advancements in tech, contributing to impactful projects, and building a strong foundation for a future in the tech industry.</p>
+        </section>
 
-I am dedicated to continuous learning, leveraging teamwork, and applying cutting-edge technologies to create meaningful solutions. My interests include exploring the latest advancements in tech, contributing to impactful projects, and building a strong foundation for a future in the tech industry.</p>
-        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div>
+                    <h3>Amrita Vishwa Vidyapeetham</h3>
+                    <p>B.Tech in CSE | 2024 - Present</p>
+                </div>
+                <div>
+                    <h3>Excel Public School</h3>
+                    <p>Class 12 (100%) | Kerala State Topper</p>
+                </div>
+                <div>
+                    <h3>Sree Gokulam Public School</h3>
+                    <p>Class 10 (98.8%) | CBSE</p>
+                </div>
+            </div>
+        </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <div class="timeline">
-                <div><h3>Amrita Vishwa Vidyapeetham</h3><p>B.Tech in CSE | 2024 - Present</p></div>
-                <div><h3>Excel Public School</h3><p>Class 12 (100%) | Kerala State Topper</p></div>
-                <div><h3>Sree Gokulam Public School</h3><p>Class 10 (98.8%) | CBSE</p></div>
-            </div>
-        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <p>C++</p>
+                <div class="progress-bar"><div style="width: 90%;"></div></div>
+                <p>Java</p>
+                <div class="progress-bar"><div style="width: 85%;"></div></div>
+                <p>Python</p>
+                <div class="progress-bar"><div style="width: 80%;"></div></div>
+                <p>HTML</p>
+                <div class="progress-bar"><div style="width: 75%;"></div></div>
+                <p>CSS</p>
+                <div class="progress-bar"><div style="width: 70%;"></div></div>
+                <p>JavaScript</p>
+                <div class="progress-bar"><div style="width: 65%;"></div></div>
+                <p>SQL</p>
+                <div class="progress-bar"><div style="width: 60%;"></div></div>
+                <p>Git</p>
+                <div class="progress-bar"><div style="width: 70%;"></div></div>
+            </div>
+        </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills">
-                <p>C++</p>
-                <div class="progress-bar"><div style="width: 90%;"></div></div>
-                <p>Java</p>
-                <div class="progress-bar"><div style="width: 85%;"></div></div>
-                <p>Python</p>
-                <div class="progress-bar"><div style="width: 80%;"></div></div>
-            </div>
-        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: cb.sc.u4cse24033@cb.students.amrita.edu</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/nimalanyathk" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/nimaldanyathk" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="GitHub">
+                </a>
+            </div>
+        </section>
+    </div>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: cb.sc.u4cse24033@cb.students.amrita.edu</p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/nimalanyathk" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn">
-                </a>
-                <a href="https://github.com/nimaldanyathk" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="GitHub">
-                </a>
-            </div> 
-        </section>
-    </div>
+    <footer>
+        <p>© 2025 Nimal Danyath K. All rights reserved.</p>
+    </footer>
 
-    <footer>
-        <p>© 2025 Nimal Danyath K. All rights reserved.</p>
-    </footer>
+    <div class="floating-dots"></div>
 
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            let icon = document.getElementById("modeIcon");
-            icon.src = document.body.classList.contains("dark-mode") 
-                ? "https://cdn-icons-png.flaticon.com/512/116/116799.png" 
-                : "https://cdn-icons-png.flaticon.com/512/6714/6714977.png";
-        }
-        
-        // Floating Dots Animation
-        function createDots() {
-            const container = document.querySelector(".floating-dots");
-            for (let i = 0; i < 20; i++) {
-                let dot = document.createElement("div");
-                dot.classList.add("dot");
-                dot.style.left = ${Math.random() * 100}vw;
-                dot.style.top = ${Math.random() * 100}vh;
-                dot.style.animationDuration = ${Math.random() * 5 + 5}s;
-                container.appendChild(dot);
-            }
-        }
-
-        createDots();
-
-        // Scroll Animation for Sections
-        const sections = document.querySelectorAll("section");
-        window.addEventListener("scroll", function () {
-            sections.forEach(section => {
-                let top = section.getBoundingClientRect().top;
-                if (top < window.innerHeight - 100) {
-                    section.style.opacity = "1";
-                    section.style.transform = "translateY(0)";
-                }
-            });
-        });
-    </script>
+    <script>
+function toggleDarkMode() { document.body.classList.toggle('dark-mode'); let icon = document.getElementById("modeIcon"); icon.src = document.body.classList.contains("dark-mode") ? "https://cdn-icons-png.flaticon.com/512/116/116799.png" : "https://cdn-icons-png.flaticon.com/512/6714/6714977.png"; } functioncreateDots() { const container = document.querySelector(".floating-dots"); for (let i = 0; i < 20; i++) { let dot = document.createElement("div"); dot.classList.add("dot"); dot.style.left = `${Math.random() * 100}vw`; dot.style.top = `${Math.random() * 100}vh`; dot.style.animationDuration = `${Math.random() * 5 + 5}s`; container.appendChild(dot); } } createDots(); const sections = document.querySelectorAll("section"); window.addEventListener("scroll", function () { sections.forEach(section => { let top = section.getBoundingClientRect().top; if (top < window.innerHeight - 100) { section.style.opacity = "1"; section.style.transform = "translateY(0)"; } }); });    </script>
 </body>
 </html>
